@@ -16,7 +16,7 @@ export function AboutSection({ aboutDict, lang }: AboutSectionProps) {
   const home = about.home;
 
   return (
-    <section id="about" className="py-24 bg-muted/30">
+    <section id="about" className="py-12 lg:py-24 bg-muted/30">
       <div className="container">
         <div className="flex flex-col max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">{about.title}</h2>

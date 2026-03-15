@@ -40,6 +40,12 @@ export function Footer({ commonDict, lang }: FooterProps) {
             <Link href="#about" className="hover:text-primary transition-colors">
               {commonDict.header.about}
             </Link>
+            <Link href={`${getPathPrefix(lang)}/work-with-me`} className="hover:text-primary transition-colors">
+              {commonDict.header.workWithMe}
+            </Link>
+            <Link href={`${getPathPrefix(lang)}/case-studies`} className="hover:text-primary transition-colors">
+              {commonDict.header.caseStudies}
+            </Link>
             <Link href={`${getPathPrefix(lang)}/ideas`} className="hover:text-primary transition-colors">
               {commonDict.header.ideas}
             </Link>

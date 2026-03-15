@@ -6,4 +6,6 @@ export type HomeDict = Dictionaries["home"];
 export type AboutDict = Dictionaries["about"];
 export type IdeasDict = Dictionaries["ideas"];
 export type PhilosophyDict = Dictionaries["philosophy"];
+export type WorkWithMeDict = Dictionaries["workWithMe"];
+export type CaseStudiesDict = Dictionaries["caseStudies"];
 export type ContactDict = Dictionaries["contact"];

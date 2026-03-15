@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { seoConfig } from "@/utils/seo/seo.config";
 import { getSortedIdeasData } from "@/lib/ideas";
+import { getCaseStudies } from "@/lib/case-studies";
 
-const staticPaths = ["/", "/about", "/philosophy", "/ideas"] as const;
+const staticPaths = ["/", "/about", "/work-with-me", "/philosophy", "/ideas"] as const;
 
 function buildSitemapEntry(
   pathEn: string,
@@ -41,8 +42,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
   entries.push(buildSitemapEntry("/about", "/ar/about"));
+  entries.push(buildSitemapEntry("/work-with-me", "/ar/work-with-me"));
+  entries.push(buildSitemapEntry("/case-studies", "/ar/case-studies"));
   entries.push(buildSitemapEntry("/philosophy", "/ar/philosophy"));
   entries.push(buildSitemapEntry("/ideas", "/ar/ideas"));
+
+  // Case study detail pages
+  const caseStudiesEn = getCaseStudies("en");
+  const caseStudiesAr = getCaseStudies("ar");
+  const caseStudySlugs = new Set([
+    ...caseStudiesEn.map((c) => c.slug),
+    ...caseStudiesAr.map((c) => c.slug),
+  ]);
+  for (const slug of caseStudySlugs) {
+    entries.push(
+      buildSitemapEntry(`/case-studies/${slug}`, `/ar/case-studies/${slug}`, {
+        changeFrequency: "monthly",
+        priority: 0.7,
+      })
+    );
+  }
 
   // Idea pages - English
   const ideasEn = getSortedIdeasData("en");

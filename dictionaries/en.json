@@ -18,6 +18,8 @@
     },
     "header": {
       "about": "About",
+      "workWithMe": "Work With Me",
+      "caseStudies": "Case Studies",
       "skills": "Skills",
       "achievements": "Achievements",
       "testimonials": "Testimonials",
@@ -252,6 +254,85 @@
       "scheduleCall": "Schedule a Call",
       "viewPortfolio": "View My Work"
     }
+  },
+  "workWithMe": {
+    "meta": {
+      "title": "Work With Me | Hasan Smadi",
+      "description": "Advisory, systems design, and collaborations — working with companies and founders on digital systems, platforms, and technology strategy.",
+      "keywords": [
+        "Hasan Smadi",
+        "BlendLab",
+        "Digital Systems",
+        "Advisory",
+        "Platforms",
+        "Technology Strategy",
+        "Product Design"
+      ],
+      "authors": [{ "name": "Hasan Smadi" }],
+      "creator": "Hasan Smadi"
+    },
+    "title": "Work With Me",
+    "intro": "I occasionally work with companies and founders on projects involving digital systems, platforms, and technology strategy.",
+    "services": [
+      {
+        "title": "Advisory",
+        "description": "Working with founders or companies to help design systems, platforms, and digital strategies. Focus on clarity, structure, and execution."
+      },
+      {
+        "title": "Systems & Product Design",
+        "description": "Helping companies design the infrastructure and systems behind their products or operations — from workflows to data architecture and scaling."
+      },
+      {
+        "title": "Collaborations",
+        "description": "Exploring partnerships and collaborations around new ideas, platforms, or ventures. Building together when there's clear alignment."
+      },
+      {
+        "title": "Speaking & Ideas",
+        "description": "Occasionally speaking about building companies, systems, and digital platforms. Workshops, talks, or informal discussions."
+      }
+    ],
+    "cta": {
+      "title": "Let's Talk",
+      "description": "If you're working on something that involves systems, platforms, or digital strategy — and you think I could help — reach out.",
+      "button": "Get in Touch"
+    }
+  },
+  "caseStudies": {
+    "meta": {
+      "title": "Case Studies | Hasan Smadi",
+      "description": "Selected projects where I helped design or build digital systems and platforms for real businesses.",
+      "keywords": [
+        "Hasan Smadi",
+        "Case Studies",
+        "Digital Systems",
+        "Platforms",
+        "Rotana Star",
+        "Tesaa",
+        "Bunud"
+      ],
+      "authors": [{ "name": "Hasan Smadi" }],
+      "creator": "Hasan Smadi"
+    },
+    "title": "Case Studies",
+    "subtitle": "Selected projects where I helped design or build digital systems and platforms for real businesses.",
+    "readCaseStudy": "Read Case Study",
+    "projectDetails": {
+      "client": "Client",
+      "industry": "Industry",
+      "focus": "Focus",
+      "year": "Year"
+    },
+    "sections": {
+      "context": "Context",
+      "challenge": "Challenge",
+      "solution": "Solution",
+      "systemsBuilt": "Systems Built",
+      "outcome": "Outcome",
+      "lessons": "Lessons"
+    },
+    "backToCaseStudies": "Back to Case Studies",
+    "previousCaseStudy": "Previous Case Study",
+    "nextCaseStudy": "Next Case Study"
   },
   "contact": {
     "meta": {

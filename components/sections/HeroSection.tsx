@@ -61,7 +61,7 @@ export function HeroSection({ homeDict, lang }: HeroSectionProps) {
             {hero.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start w-full sm:w-auto">
-            <Link href="#about" className="w-full sm:w-auto">
+            <Link href={`${prefix}/case-studies`} className="w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto px-12 py-6">
                 {hero.aboutButton}
               </Button>

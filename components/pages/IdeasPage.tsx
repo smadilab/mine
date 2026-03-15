@@ -106,19 +106,23 @@ export function IdeasPage({ articles, featuredArticles, categories, ideasDict, c
               {contactDict.cta.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                className="bg-secondary text-primary hover:bg-secondary/90"
-                size="lg"
-              >
-                {contactDict.cta.scheduleCall}
-              </Button>
-              <Button
-                variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white/10"
-                size="lg"
-              >
-                {contactDict.cta.viewPortfolio}
-              </Button>
+              <Link href={`${getPathPrefix(lang)}/#contact`}>
+                <Button
+                  className="bg-secondary text-primary hover:bg-secondary/90"
+                  size="lg"
+                >
+                  {contactDict.cta.scheduleCall}
+                </Button>
+              </Link>
+              <Link href={`${getPathPrefix(lang)}/case-studies`}>
+                <Button
+                  variant="outline"
+                  className="bg-transparent border-white text-white hover:bg-white/10"
+                  size="lg"
+                >
+                  {contactDict.cta.viewPortfolio}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

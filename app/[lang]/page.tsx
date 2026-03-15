@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
 export default async function Home({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params;
   const dictionaries = await getDictionary(lang);
-  const featuredIdeas = getFeaturedIdeas(lang);
+  const featuredIdeas = getFeaturedIdeas(lang).slice(0, 6);
 
   return (
     <main>

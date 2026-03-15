@@ -80,9 +80,15 @@ export function Header({ commonDict, lang }: HeaderProps) {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8 text-sm">
           <Link href={`${getPathPrefix(lang)}/about`} className="hover:text-primary transition-colors">
             {commonDict.header.about}
+          </Link>
+          <Link href={`${getPathPrefix(lang)}/work-with-me`} className="hover:text-primary transition-colors">
+            {commonDict.header.workWithMe}
+          </Link>
+          <Link href={`${getPathPrefix(lang)}/case-studies`} className="hover:text-primary transition-colors">
+            {commonDict.header.caseStudies}
           </Link>
           <Link href={`${getPathPrefix(lang)}/ideas`} className="hover:text-primary transition-colors">
             {commonDict.header.ideas}
@@ -90,7 +96,7 @@ export function Header({ commonDict, lang }: HeaderProps) {
           <Link href={`${getPathPrefix(lang)}/philosophy`} className="hover:text-primary transition-colors">
             {commonDict.header.philosophy}
           </Link>
-          <Link href="#contact" className="hover:text-primary transition-colors">
+          <Link href={`${getPathPrefix(lang)}/#contact`} className="hover:text-primary transition-colors">
             {commonDict.header.contact}
           </Link>
         </nav>
@@ -147,6 +153,20 @@ export function Header({ commonDict, lang }: HeaderProps) {
             {commonDict.header.about}
           </Link>
           <Link
+            href={`${getPathPrefix(lang)}/work-with-me`}
+            className="py-2 hover:text-primary transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {commonDict.header.workWithMe}
+          </Link>
+          <Link
+            href={`${getPathPrefix(lang)}/case-studies`}
+            className="py-2 hover:text-primary transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {commonDict.header.caseStudies}
+          </Link>
+          <Link
             href={`${getPathPrefix(lang)}/ideas`}
             className="py-2 hover:text-primary transition-colors"
             onClick={() => setIsMenuOpen(false)}
@@ -161,7 +181,7 @@ export function Header({ commonDict, lang }: HeaderProps) {
             {commonDict.header.philosophy}
           </Link>
           <Link
-            href="#contact"
+            href={`${getPathPrefix(lang)}/#contact`}
             className="py-2 hover:text-primary transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
