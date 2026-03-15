@@ -80,9 +80,7 @@ export function IdeasPage({ articles, featuredArticles, categories, ideasDict, c
                     aria-label={article.title}
                   >
                     <Button variant="ghost" size="sm" className="text-primary p-0 hover:bg-transparent hover:text-primary/80">
-                      <span className="line-clamp-1 max-w-[200px] sm:max-w-[280px]">
-                        {fmt(ideasDict.readArticle, { title: article.title })}
-                      </span>
+                      {ideasDict.readMore}
                       <ArrowRight className="ml-2 rtl:mr-2 rtl:ml-0 h-4 w-4 shrink-0 rtl:rotate-180" />
                     </Button>
                   </Link>
