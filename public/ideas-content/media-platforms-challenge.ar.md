@@ -3,7 +3,7 @@ id: "9"
 slug: "why-media-platforms-are-harder-than-they-look"
 title: "لماذا منصات الإعلام أصعب مما تبدو"
 excerpt: "منصات الإعلام ليست مجرد مواقع محتوى. هي نظم معقدة تجمع النشر والتوزيع والتكنولوجيا والاقتصاد."
-date: "2025-03-16"
+date: "2025-11-09"
 category: "technology"
 readTime: 5
 featured: true

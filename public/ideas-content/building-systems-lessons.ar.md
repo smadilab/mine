@@ -3,7 +3,7 @@ id: "5"
 slug: "what-building-real-systems-taught-me-about-business"
 title: "ما علّمني بناء النظم الحقيقية عن الأعمال"
 excerpt: "الدروس الحقيقية عن الأعمال لا تأتي من الأفكار—بل من بناء النظم التي يجب أن تعمل كل يوم."
-date: "2025-03-16"
+date: "2025-11-20"
 category: "business"
 readTime: 6
 featured: true

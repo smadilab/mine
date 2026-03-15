@@ -3,7 +3,7 @@ id: "5"
 slug: "what-building-real-systems-taught-me-about-business"
 title: "What Building Real Systems Taught Me About Business"
 excerpt: "The real lessons about business don't come from ideas—they come from building systems that have to work every day."
-date: "2025-03-16"
+date: "2025-11-20"
 category: "business"
 readTime: 6
 featured: true

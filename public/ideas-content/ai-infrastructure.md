@@ -3,7 +3,7 @@ id: "7"
 slug: "ai-is-not-magic-its-infrastructure"
 title: "AI Is Not Magic — It's Infrastructure"
 excerpt: "AI is often presented as technological magic. But in practice, the most effective AI products are built on careful system design and infrastructure."
-date: "2025-03-16"
+date: "2025-08-12"
 category: "technology"
 readTime: 6
 featured: true

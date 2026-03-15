@@ -3,7 +3,7 @@ id: "3"
 slug: "ideas-dont-build-companies-systems-do"
 title: "Ideas Don't Build Companies — Systems Do"
 excerpt: "Why ideas alone don't create businesses—and why systems are what actually turn concepts into functioning companies."
-date: "2025-03-16"
+date: "2025-05-12"
 category: "business"
 readTime: 5
 featured: true

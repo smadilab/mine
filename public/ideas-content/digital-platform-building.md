@@ -3,7 +3,7 @@ id: "8"
 slug: "what-it-takes-to-build-a-digital-platform"
 title: "What It Takes to Build a Digital Platform"
 excerpt: "Building a platform is very different from building a simple product. Platforms operate as ecosystems—and that complexity is often underestimated."
-date: "2025-03-16"
+date: "2026-01-05"
 category: "technology"
 readTime: 5
 featured: true

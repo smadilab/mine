@@ -3,7 +3,7 @@ id: "10"
 slug: "the-difference-between-a-product-and-a-business"
 title: "The Difference Between a Product and a Business"
 excerpt: "Building a product is not the same as building a business. Confusing the two is one of the most common mistakes founders make."
-date: "2025-03-16"
+date: "2025-07-16"
 category: "business"
 readTime: 5
 featured: true

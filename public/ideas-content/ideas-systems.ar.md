@@ -3,7 +3,7 @@ id: "3"
 slug: "ideas-dont-build-companies-systems-do"
 title: "الأفكار لا تبني الشركات — النظم تبنيها"
 excerpt: "لماذا لا تنشئ الأفكار وحدها الأعمال—ولماذا النظم هي ما يحوّل المفاهيم فعلياً إلى شركات قائمة."
-date: "2025-03-16"
+date: "2025-05-12"
 category: "business"
 readTime: 5
 featured: true

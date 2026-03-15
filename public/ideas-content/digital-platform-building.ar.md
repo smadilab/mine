@@ -3,7 +3,7 @@ id: "8"
 slug: "what-it-takes-to-build-a-digital-platform"
 title: "ما يتطلبه بناء منصة رقمية"
 excerpt: "بناء منصة مختلف جداً عن بناء منتج بسيط. المنصات تعمل كنظم بيئية—وهذا التعقيد غالباً يُستخف به."
-date: "2025-03-16"
+date: "2026-01-05"
 category: "technology"
 readTime: 5
 featured: true

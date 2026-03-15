@@ -3,7 +3,7 @@ id: "11"
 slug: "most-companies-dont-need-more-marketing"
 title: "Most Companies Don't Need More Marketing"
 excerpt: "Many companies do not actually need more marketing. They need better systems. Here's why and what to focus on instead."
-date: "2025-03-16"
+date: "2026-02-02"
 category: "business"
 readTime: 5
 featured: true

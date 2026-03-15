@@ -3,7 +3,7 @@ id: "9"
 slug: "why-media-platforms-are-harder-than-they-look"
 title: "Why Media Platforms Are Harder Than They Look"
 excerpt: "Media platforms are not just content websites. They are complex systems that combine publishing, distribution, technology, and economics."
-date: "2025-03-16"
+date: "2025-11-09"
 category: "technology"
 readTime: 5
 featured: true

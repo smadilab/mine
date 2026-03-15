@@ -3,7 +3,7 @@ id: "11"
 slug: "most-companies-dont-need-more-marketing"
 title: "معظم الشركات لا تحتاج تسويقاً أكثر"
 excerpt: "كثير من الشركات لا تحتاج فعلياً تسويقاً أكثر. تحتاج نظماً أفضل. إليك السبب وما يجب التركيز عليه بدلاً."
-date: "2025-03-16"
+date: "2026-02-02"
 category: "business"
 readTime: 5
 featured: true

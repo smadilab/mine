@@ -3,7 +3,7 @@ id: "7"
 slug: "ai-is-not-magic-its-infrastructure"
 title: "الذكاء الاصطناعي ليس سحراً — إنه بنية تحتية"
 excerpt: "غالباً يُقدّم الذكاء الاصطناعي كسحر تقني. لكن في الممارسة، أنجح منتجات الذكاء الاصطناعي تُبنى على تصميم نظامي دقيق وبنية تحتية."
-date: "2025-03-16"
+date: "2025-08-12"
 category: "technology"
 readTime: 6
 featured: true

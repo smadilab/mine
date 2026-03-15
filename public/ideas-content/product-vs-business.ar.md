@@ -3,7 +3,7 @@ id: "10"
 slug: "the-difference-between-a-product-and-a-business"
 title: "الفرق بين المنتج والعمل"
 excerpt: "بناء منتج ليس مثل بناء عمل. الخلط بينهما أحد أكثر أخطاء المؤسسين شيوعاً."
-date: "2025-03-16"
+date: "2025-07-16"
 category: "business"
 readTime: 5
 featured: true
