@@ -3,86 +3,97 @@ import { seoConfig } from "@/utils/seo/seo.config";
 import { getSortedIdeasData } from "@/lib/ideas";
 import { getCaseStudies } from "@/lib/case-studies";
 
-function buildSitemapEntry(
-  pathEn: string,
-  pathAr: string,
+const siteURL = seoConfig.siteURL;
+
+function buildEntry(
+  url: string,
   options?: {
     lastModified?: Date;
     changeFrequency?: MetadataRoute.Sitemap[0]["changeFrequency"];
     priority?: number;
   }
 ): MetadataRoute.Sitemap[0] {
-  const urlEn = `${seoConfig.siteURL}${pathEn}`;
-  const urlAr = `${seoConfig.siteURL}${pathAr}`;
   return {
-    url: urlEn,
+    url,
     lastModified: options?.lastModified ?? new Date(),
     changeFrequency: options?.changeFrequency ?? "monthly",
     priority: options?.priority ?? 0.8,
-    alternates: {
-      languages: {
-        en: urlEn,
-        ar: urlAr,
-        "x-default": urlEn,
-      },
-    },
   };
+}
+
+const MAX_LOCS_PER_SITEMAP = 1000;
+
+export const SITEMAP_ENTITIES = ["static", "ideas", "case-studies"] as const;
+export type SitemapEntity = (typeof SITEMAP_ENTITIES)[number];
+
+/** Static pages - same for all languages */
+export function getStaticUrls(): MetadataRoute.Sitemap {
+  return [
+    buildEntry(`${siteURL}/`, { changeFrequency: "weekly", priority: 1 }),
+    buildEntry(`${siteURL}/about`),
+    buildEntry(`${siteURL}/work-with-me`),
+    buildEntry(`${siteURL}/case-studies`),
+    buildEntry(`${siteURL}/philosophy`),
+    buildEntry(`${siteURL}/ideas`),
+  ];
+}
+
+/** Idea pages with pagination */
+export function getIdeasUrls(page: number): { urls: MetadataRoute.Sitemap; count: number } {
+  const ideasEn = getSortedIdeasData("en");
+  const ideasAr = getSortedIdeasData("ar");
+  const slugsEn = new Set(ideasEn.map((i) => i.slug));
+  const allIdeas = [
+    ...ideasEn,
+    ...ideasAr.filter((i) => !slugsEn.has(i.slug)),
+  ];
+  const start = (page - 1) * MAX_LOCS_PER_SITEMAP;
+  const urls = allIdeas.slice(start, start + MAX_LOCS_PER_SITEMAP).map((idea) =>
+    buildEntry(`${siteURL}/ideas/${idea.slug}`, {
+      lastModified: new Date(idea.date),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    })
+  );
+  return { urls, count: allIdeas.length };
+}
+
+/** Case study pages with pagination */
+export function getCaseStudiesUrls(page: number): { urls: MetadataRoute.Sitemap; count: number } {
+  const caseStudiesEn = getCaseStudies("en");
+  const caseStudiesAr = getCaseStudies("ar");
+  const slugs = new Set([
+    ...caseStudiesEn.map((c) => c.slug),
+    ...caseStudiesAr.map((c) => c.slug),
+  ]);
+  const allSlugs = Array.from(slugs);
+  const start = (page - 1) * MAX_LOCS_PER_SITEMAP;
+  const urls = allSlugs.slice(start, start + MAX_LOCS_PER_SITEMAP).map((slug) =>
+    buildEntry(`${siteURL}/case-studies/${slug}`, {
+      changeFrequency: "monthly",
+      priority: 0.7,
+    })
+  );
+  return { urls, count: allSlugs.length };
+}
+
+/** Get entity counts for sitemap index */
+export function getSitemapEntityCounts(): { entity: SitemapEntity; count: number }[] {
+  const { count: ideasCount } = getIdeasUrls(1);
+  const { count: caseStudiesCount } = getCaseStudiesUrls(1);
+  return [
+    { entity: "static", count: 1 },
+    { entity: "ideas", count: Math.ceil(ideasCount / MAX_LOCS_PER_SITEMAP) || 1 },
+    { entity: "case-studies", count: Math.ceil(caseStudiesCount / MAX_LOCS_PER_SITEMAP) || 1 },
+  ];
 }
 
 export function getSitemapEntries(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
-
-  entries.push(
-    buildSitemapEntry("/", "/ar", {
-      changeFrequency: "weekly",
-      priority: 1,
-    })
-  );
-  entries.push(buildSitemapEntry("/about", "/ar/about"));
-  entries.push(buildSitemapEntry("/work-with-me", "/ar/work-with-me"));
-  entries.push(buildSitemapEntry("/case-studies", "/ar/case-studies"));
-  entries.push(buildSitemapEntry("/philosophy", "/ar/philosophy"));
-  entries.push(buildSitemapEntry("/ideas", "/ar/ideas"));
-
-  const caseStudiesEn = getCaseStudies("en");
-  const caseStudiesAr = getCaseStudies("ar");
-  const caseStudySlugs = new Set([
-    ...caseStudiesEn.map((c) => c.slug),
-    ...caseStudiesAr.map((c) => c.slug),
-  ]);
-  for (const slug of caseStudySlugs) {
-    entries.push(
-      buildSitemapEntry(`/case-studies/${slug}`, `/ar/case-studies/${slug}`, {
-        changeFrequency: "monthly",
-        priority: 0.7,
-      })
-    );
-  }
-
-  const ideasEn = getSortedIdeasData("en");
-  for (const idea of ideasEn) {
-    entries.push(
-      buildSitemapEntry(`/ideas/${idea.slug}`, `/ar/ideas/${idea.slug}`, {
-        lastModified: new Date(idea.date),
-        changeFrequency: "monthly",
-        priority: 0.6,
-      })
-    );
-  }
-
-  const ideasAr = getSortedIdeasData("ar");
-  const slugsEn = new Set(ideasEn.map((i) => i.slug));
-  for (const idea of ideasAr) {
-    if (!slugsEn.has(idea.slug)) {
-      entries.push(
-        buildSitemapEntry(`/ideas/${idea.slug}`, `/ar/ideas/${idea.slug}`, {
-          lastModified: new Date(idea.date),
-          changeFrequency: "monthly",
-          priority: 0.6,
-        })
-      );
-    }
-  }
-
+  entries.push(...getStaticUrls());
+  const { urls: ideasUrls } = getIdeasUrls(1);
+  entries.push(...ideasUrls);
+  const { urls: caseStudiesUrls } = getCaseStudiesUrls(1);
+  entries.push(...caseStudiesUrls);
   return entries;
 }
