@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import {
   GithubIcon,
   LinkedinIcon,
-  TwitterIcon,
   InstagramIcon,
-  ArrowUpIcon
+  ArrowUpIcon,
+  FacebookIcon
 } from "lucide-react";
 import type { CommonDict } from "@/utils/translations/dictionary-types";
 import type { Lang } from "@/utils/translations/i18n-config";
@@ -58,19 +58,19 @@ export function Footer({ commonDict, lang }: FooterProps) {
           </nav>
 
           <div className="flex gap-3">
-            <Button size="icon" variant="ghost" className="rounded-full" onClick={() => window.open('https://www.linkedin.com/in/hasanaliahmad/', '_blank')}>
+            <Button size="icon" variant="ghost" className="rounded-full" onClick={() => window.open('https://www.linkedin.com/in/smadilab/', '_blank')}>
               <LinkedinIcon className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Button>
-            <Button size="icon" variant="ghost" className="rounded-full" onClick={() => window.open('https://x.com/hasanahmadsw', '_blank')}>
-              <TwitterIcon className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
+            <Button size="icon" variant="ghost" className="rounded-full" onClick={() => window.open('https://www.facebook.com/smadilab', '_blank')}>
+              <FacebookIcon className="h-5 w-5" />
+              <span className="sr-only">Facebook</span>
             </Button>
-            <Button size="icon" variant="ghost" className="rounded-full" onClick={() => window.open('https://www.instagram.com/hasanahmadsw', '_blank')}>
+            <Button size="icon" variant="ghost" className="rounded-full" onClick={() => window.open('https://www.instagram.com/smadilab', '_blank')}>
               <InstagramIcon className="h-5 w-5" />
               <span className="sr-only">Instagram</span>
             </Button>
-            <Button size="icon" variant="ghost" className="rounded-full" onClick={() => window.open('https://github.com/hasanahmadsw', '_blank')}>
+            <Button size="icon" variant="ghost" className="rounded-full" onClick={() => window.open('https://github.com/smadilab', '_blank')}>
               <GithubIcon className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </Button>

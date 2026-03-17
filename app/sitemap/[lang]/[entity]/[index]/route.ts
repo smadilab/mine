@@ -5,7 +5,10 @@ import {
   SITEMAP_ENTITIES,
   type SitemapEntity,
 } from "@/lib/sitemap-data";
-import { generateSitemapXml, isLanguageInSitemap } from "@/utils/seo/sitemap/sitemap-utils";
+import {
+  generateSitemapXml,
+  isLanguageInSitemap,
+} from "@/utils/seo/sitemap/sitemap-utils";
 import { i18n, type Lang } from "@/utils/translations/i18n-config";
 import type { MetadataRoute } from "next";
 import { NextResponse } from "next/server";
@@ -14,7 +17,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET(
   _request: Request,
-  props: { params: Promise<{ lang: string; entity: string; index: string }> }
+  props: { params: Promise<{ lang: string; entity: string; index: string }> },
 ) {
   const { lang, entity, index } = await props.params;
 
@@ -57,7 +60,7 @@ export async function GET(
 function generateEntityUrls(
   lang: Lang,
   entity: SitemapEntity,
-  page: number
+  page: number,
 ): MetadataRoute.Sitemap {
   switch (entity) {
     case "static":
